@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DARK THEME */
+:root {
+  --bg-primary: #0a0f1c;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1f2937;
+
+  --accent-primary: #00f0ff;
+  --accent-purple: #7c3aed;
+
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+
+  --border-default: #1f2937;
+}
+
+/* LIGHT THEME */
+:root[data-theme="light"] {
+  --bg-primary: #f8f8fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f0f0f5;
+
+  --border-default: #d8d8e5;
+
+  --text-primary: #0d0d14;
+  --text-secondary: #52526a;
+
+  --accent-primary: #0099cc;
+}
+.light {
+  --bg-primary: #f9fafb;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e5e7eb;
+
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+
+  --accent-primary: #2563eb;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+
+}
+
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease;
+}
+.cyber-glow {
+  box-shadow: 0 0 10px #00f0ff33, 0 0 20px #7c3aed22;
+}
+/* GRID BACKGROUND */
+.cyber-grid {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    rgba(0, 240, 255, 0.05) 41px
+  );
+  animation: moveGrid 20s linear infinite;
+}
+
+@keyframes moveGrid {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-100px, -100px); }
+}
+
+/* FADE ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
